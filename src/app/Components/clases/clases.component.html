@@ -1,0 +1,29 @@
+<div [ngClass]="alerta" class="alert" role=" alert ">
+    A simple primary alert—check it out!
+</div>
+<button class="btn btn-success" type="button" (click)="alerta='alert-success'">success</button>
+<button class="btn btn-warning" type="button" (click)="alerta='alert-warning'"> warning</button>
+
+<br><br><br>
+
+<h3>Proceso Asincrono</h3>
+
+<button class="btn btn-warning" type="button" (click)="ejecutar()" [disabled]="loading"> 
+    <i  [ngClass]="{'fa-save':!loading,'fa-sync fa-spin':loading}"
+    class="fa"></i>
+    <span *ngIf="!loading"> Guardar cambios</span>
+    <span *ngIf="loading"> Espere por favor</span></button>
+
+<br><br><br>
+<h1 [appResaltado]="'pink'">Hola a todos amo a Annie</h1>
+
+
+<br><br><br>
+<h3>Switch</h3>
+<div [ngSwitch]="alert">
+    <div *ngSwitchCase="'succes'" class="alert alert-success" role="alert"> Succes</div>
+    <div *ngSwitchCase="'info'" class="alert alert-info" role="alert">Info</div>
+    <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">Warning</div>
+    <div *ngSwitchDefault class="alert alert-danger" role="alert">Nada</div>
+
+</div>
